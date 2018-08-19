@@ -1,4 +1,5 @@
 [package]
+description = "A strongly-typed asynchronous Rusty interface to the Google Geocoding API"
 license = "MIT"
 name = "google_geocoding"
 version = "0.1.0"
