@@ -390,7 +390,7 @@ pub enum Type {
     TransitStation,
 }
 
-/// 
+/// A bounding box defined by northeast and southwest coordinates
 #[derive(Clone,Copy,Debug,Deserialize,Serialize)]
 pub struct Viewport {
     /// Northeast corner of the bounding box
