@@ -2,6 +2,8 @@
 description = "A strongly-typed asynchronous Rusty interface to the Google Geocoding API"
 license = "MIT"
 name = "google_geocoding"
+readme = "README.md"
+repository = "https://github.com/spease/google_geocoding"
 version = "0.1.0"
 authors = ["Steven Pease <peasteven@gmail.com>"]
 
