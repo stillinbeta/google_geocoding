@@ -6,7 +6,7 @@ license = "MIT"
 name = "google_geocoding"
 readme = "README.md"
 repository = "https://github.com/spease/google_geocoding"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Steven Pease <peasteven@gmail.com>"]
 
 [dependencies]
