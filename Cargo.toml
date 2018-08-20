@@ -1,5 +1,7 @@
 [package]
+categories = ["api-bindings", "asynchronous"]
 description = "A strongly-typed asynchronous Rusty interface to the Google Geocoding API"
+keywords = ["geocode", "geocoding", "google"]
 license = "MIT"
 name = "google_geocoding"
 readme = "README.md"
