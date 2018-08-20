@@ -82,6 +82,7 @@
 extern crate failure;
 extern crate futures;
 extern crate itertools;
+#[cfg(test)]
 #[macro_use]
 extern crate log;
 extern crate nav_types;
@@ -1341,8 +1342,6 @@ mod test {
 
     const ADDRESS: &str = "1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA";
     const COORDINATES: (f64, f64) = (37.42241, -122.08561);
-
-    use strum::IntoEnumIterator;
 
     fn test_print<L>(i_label: L, i_rr: impl Future<Item = Vec<Reply>, Error=Error>) -> impl Future<Item=(),Error=()> 
         where L: Debug + 'static {
