@@ -1119,8 +1119,8 @@ impl<'de> serde::Deserialize<'de> for Coordinates {
             longitude: f64,
         }
         Helper::deserialize(deserializer)
-            .and_then(|x|WGS84::try_new(x.latitude, x.longitude, 0f64).ok_or(serde::de::Error::custom(format!("Coordinates ({},{}) do not lie on WGS-84 ellipsoid", x.latitude, x.longitude))))
-            .map(|x|Coordinates(x))
+            .and_then(|x|WGS84::try_new(x.latitude, x.longitude, 0f64).ok_or_else(||serde::de::Error::custom(format!("Coordinates ({},{}) do not lie on WGS-84 ellipsoid", x.latitude, x.longitude))))
+            .map(Coordinates)
     }
 }
 
