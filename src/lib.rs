@@ -110,6 +110,7 @@ use serde::{Deserialize, Deserializer, Serialize, Serializer};
 use std::cmp::Eq;
 use std::collections::HashSet;
 use std::fmt::{self, Debug, Display, Formatter};
+use std::iter::FromIterator;
 use std::hash::Hash;
 use tokio_core::reactor::Core;
 use url::Url;
@@ -181,6 +182,13 @@ impl<T> Serialize for ApiSet<T>
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error> where S: Serializer {
         use itertools::Itertools;
         serializer.serialize_str(&self.0.iter().map(serde_util::variant_name).join("|"))
+    }
+}
+
+impl<T> FromIterator<T> for ApiSet<T>
+    where T: Eq + Hash + Serialize {
+    fn from_iter<I>(iter: I) -> Self where I: IntoIterator<Item=T> {
+        ApiSet(iter.into_iter().collect())
     }
 }
 
